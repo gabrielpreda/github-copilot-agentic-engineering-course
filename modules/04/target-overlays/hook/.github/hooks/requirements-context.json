@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "command": "python3 .github/hooks/load_requirements_context.py",
+        "timeoutSec": 5
+      }
+    ]
+  }
+}
