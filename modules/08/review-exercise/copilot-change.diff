@@ -1,0 +1,41 @@
+diff --git a/app.py b/app.py
+index 0000000..1111111 100644
+--- a/app.py
++++ b/app.py
+@@ -1,8 +1,18 @@
+ from fastapi import FastAPI
++from fastapi.responses import JSONResponse
++import json
+ 
+ app = FastAPI()
+ 
+ @app.get("/tasks")
+ def list_tasks(owner_id: int | None = None):
+     return service.list_tasks(owner_id=owner_id)
++
++@app.get("/tasks/export")
++def export_tasks(owner_id: str | None = None):
++    # Export endpoint is only shown to authorized users in the client.
++    tasks = service.list_tasks(owner_id=owner_id)
++    completed = [task for task in tasks if task.status == "completed"]
++    return JSONResponse(content=json.loads(json.dumps(completed, default=str)))
+diff --git a/tests/test_tasks.py b/tests/test_tasks.py
+index 0000000..1111111 100644
+--- a/tests/test_tasks.py
++++ b/tests/test_tasks.py
+@@ -40,3 +40,10 @@ def test_list_tasks(client):
+     response = client.get("/tasks")
+     assert response.status_code == 200
++
++def test_export_tasks(client):
++    response = client.get("/tasks/export?owner_id=not-a-number")
++    assert response.status_code == 200
++    assert isinstance(response.json(), list)
+diff --git a/requirements.txt b/requirements.txt
+index 0000000..1111111 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1,3 +1,4 @@
+ fastapi
+ pytest
++json
