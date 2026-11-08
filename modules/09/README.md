@@ -15,4 +15,4 @@ Turn product and design evidence into approved Jira stories, then implement each
 
 Miro is a product evidence source; Jira is the story source of truth; GitHub is used for code/PRs. Figma MCP is configured for UI design evidence when the story includes a UI. The current Task API is UI-less, so learners must identify Figma as not applicable when no UI is in scope.
 
-Module 10 covers end-to-end CI and deployment. Module 11 completes formal PR review and capstone presentation.
+Module 10 covers end-to-end CI in GitHub Actions and live HTTP verification, with an optional separately approved Cloud Run staging deployment. Module 11 completes formal PR review and capstone presentation.
