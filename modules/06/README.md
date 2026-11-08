@@ -1,6 +1,6 @@
 # Module 6 — Plan, test, and implement incrementally
 
-Implement the Task Priority feature from the reviewed requirements, specification, and task list. Work in small test/code steps, review each diff against acceptance criteria, update task state from actual evidence, and carry a concise handoff into a new Copilot session.
+Implement the first Jira story from the reviewed requirements, specification, and task list. Work in small test/code steps, review each diff against acceptance criteria, update story/task state from actual evidence, and carry a concise handoff into a new Copilot session. Later stories follow the same one-at-a-time loop in Modules 7–9.
 
 ## Materials
 
@@ -17,4 +17,4 @@ The Module 1 starter is deliberately small, but this feature exercises a real ch
 
 The core track implements only the behavior in the approved Module 4/5 artifacts. Priority ordering is an advanced extension only when the Module 5 scope-change exercise resulted in an approved requirement and task. This keeps the learning project growing while preserving scope traceability.
 
-Reuse Module 3's test-feedback Skill and Module 2's GitHub MCP and tool-observation Hook. Module 6 adds an optional session-start Hook that reports the current task/status from the handoff note, complementing Module 4's requirements reminder. No new MCP server is needed; the existing GitHub connection is used only when remote Issue context is relevant.
+Reuse Module 3's test-feedback Skill and Module 2's tool-observation Hook. Module 6 works from the reviewed first story; Modules 5 and 9 establish the Jira story source of truth and integrations. Module 6 adds an optional session-start Hook that reports current story/task status from the handoff note.

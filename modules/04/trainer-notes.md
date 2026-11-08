@@ -7,13 +7,13 @@
 - 20 min: search/read the GitHub Issue and inspect code/tests.
 - 15 min: learners formulate questions; provide only the answers they request.
 - 20 min: draft and peer-review criteria and open questions.
-- 10 min: demonstrate the optional Miro source and/or session-start Hook; discuss continuity into Module 5.
+- 10 min: demonstrate the Miro source and/or session-start Hook; discuss continuity into Modules 5 and 9.
 
 ## Preparation
 
 1. Prepare a Target project that retains the Module 1 API and Module 2 and 3 customizations. Module 2 overlay copies are not present in this Training materials tree in the current checkout; if learners lack them, use their previously committed Target-project versions or have the trainer demonstrate those concepts. Do not imply that a missing overlay was copied.
 2. Create the GitHub Issue from `issue-brief.md` in the Target repository and verify participant read access through the existing GitHub MCP connection.
-3. Prepare a Miro board only if you want the optional extension. Include a simple workflow sketch with a few notes, such as a proposed priority selector, default, or ordering. Keep some relevant decisions intentionally unresolved. Provide a full board URL and confirm learners have access.
+3. Prepare a Miro board for the core product-evidence exercise. Include a workflow sketch with a few notes, such as a proposed priority selector, default, or ordering. Keep some relevant decisions intentionally unresolved. Provide a full board URL and confirm learners have access; if MCP access is unavailable, provide an export.
 4. Before enabling Miro MCP, review its currently exposed tools and organization policy. Miro MCP may expose write actions; use a read-only or supervised setup for the exercise. If write tools cannot be constrained, provide exported evidence instead.
 5. Check which Copilot harness and hook format the session uses. The included example targets the Copilot command-hook format with `sessionStart`; Hook preview/availability and configuration differ by runtime. Use a trainer demo if participants cannot run it.
 

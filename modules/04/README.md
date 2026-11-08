@@ -11,10 +11,10 @@ Turn an underspecified feature request into a reviewable draft of requirements. 
 - `target-overlays/skill/` — generic requirements-refinement Skill to **ADD** alongside earlier Skills.
 - `target-overlays/template/` — requirements worksheet to **ADD** at `docs/requirements/task-priority.md`.
 - `target-overlays/hook/` — optional session-start Hook to **ADD** alongside the Module 2 audit Hook.
-- `target-overlays/miro/` — optional Miro MCP configuration snippet to **MERGE** into an existing MCP config when a trainer board is available.
+- `target-overlays/miro/` — Miro MCP configuration snippet to **MERGE** into an existing MCP config when a trainer board is available; otherwise use the trainer-provided board export.
 
 ## Progression
 
-Module 4 reuses the Module 2 API-contract-review Skill, GitHub MCP connection, and tool-observation Hook, plus the Module 3 test-feedback Skill and test evidence. It adds one new reusable Skill, an optional Miro evidence source, and a distinct lifecycle Hook. No application code is required in this module; the requirements artifact becomes input to Module 5.
+Module 4 reuses the Module 2 API-contract-review Skill, GitHub MCP connection, and tool-observation Hook, plus the Module 3 test-feedback Skill and test evidence. It adds one new reusable Skill, reads a trainer-provided Miro evidence source (MCP or export), and adds a distinct lifecycle Hook. No application code is required in this module; the requirements artifact becomes input to Module 5 and the Miro evidence is carried into Jira story creation in Module 9.
 
-The Miro activity is optional. Use only a trainer-prepared board and read-only inspection prompts. A GitHub Issue and the local Target project are sufficient for the core lab.
+Use a trainer-prepared board and read-only inspection prompts. If Miro MCP is unavailable, use a board export so the product-evidence exercise remains part of the core workflow. A GitHub Issue and the local Target project provide complementary request and implementation context.

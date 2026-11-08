@@ -46,9 +46,9 @@ If GitHub MCP is unavailable, use the Issue text supplied by the trainer and rec
 2. Compare each question with the available evidence. Remove questions already answered by the request, current implementation, tests, or a trusted source.
 3. Keep unanswered items open. Do not accept plausible defaults as approved requirements.
 
-### Optional Lab C extension — inspect a Miro design source
+### Lab C extension — inspect the Miro product flow
 
-If the trainer has a prepared Miro board that describes the priority workflow, connect the official Miro MCP server as described in `trainer-notes.md`. This is an optional second MCP source, beyond GitHub. Ask Copilot to inspect the named board and report relevant evidence with locations, then compare that evidence with the Issue and local code.
+Use the trainer's prepared Miro board that describes the priority workflow. Connect the Miro MCP server as described in `trainer-notes.md`, or use the supplied board export if the MCP connection is unavailable. Ask Copilot to inspect the named board and report relevant evidence with locations, then compare that evidence with the Issue and local code. This evidence will be used to create and implement traceable Jira stories in Module 9.
 
 Miro MCP can expose actions as well as reads. For this exercise, do not invoke create, update, delete, or other write tools. Only use it if your environment lets you constrain or supervise tool access appropriately; otherwise the trainer can provide a board export or screenshots as evidence. Do not treat board content as approved if it conflicts with the requester or lacks an owner.
 
