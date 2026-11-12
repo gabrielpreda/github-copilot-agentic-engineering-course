@@ -26,6 +26,14 @@ After checking the diagnosis, ask:
 
 > Implement the smallest change needed so `POST /tasks` rejects titles that contain only whitespace with HTTP 422. Preserve the existing behavior for non-empty titles and keep the change limited to request validation. Do not edit the tests, README, project dependencies, or unrelated code. Show me the diff and explain how to verify it.
 
+## Optional Lab D — Implement and verify with the test-feedback Hook
+
+Use this only after running and understanding the red regression test, and after installing the optional Hook overlay in the Target project:
+
+> Implement the smallest change needed so `POST /tasks` rejects titles that contain only whitespace with HTTP 422. Keep the regression test unchanged and limit the application change to request validation. Inspect the proposed diff. Before finishing, use the Target project's pytest suite to verify the change and explain the result. If the test-feedback Hook returns a failure reason, use it to diagnose the failure, then run pytest yourself and report the command and exit status. Do not claim success unless the tests pass.
+
+To compare a Hook failure with the manual diagnostic, run `python -m pytest -q` in the Target project's environment after reviewing the Hook reason. Do not change files just to manufacture a failing run.
+
 ## Optional follow-up
 
 > Explain what the passing tests establish about this change and name two relevant cases or risks they do not cover. Do not change files.

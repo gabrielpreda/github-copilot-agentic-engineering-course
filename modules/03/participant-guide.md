@@ -77,6 +77,20 @@ If the MCP server is unavailable, use the trainer's fallback: read the issue tex
 6. Run the app and manually check a normal title and a whitespace-only title through `/docs` or an HTTP client. Confirm the normal request still succeeds and the invalid title receives HTTP 422.
 7. Review the final diff. Separate the test additions from the implementation fix and check for unrelated file or dependency changes.
 
+## Optional Lab D — Add test feedback at agent stop
+
+Do this only after the red-test exercise: learners must first add and run the regression test, inspect its failure, and explain it. The Hook is for the implementation and verification step, not for writing or first diagnosing the test.
+
+1. Confirm the `tests/` change and the current application state are understood. Check whether `.github/hooks/test_feedback.json` or `.github/hooks/run_changed_tests.py` already exists. If either exists, do not overwrite it; ask the trainer how to merge the Hook into the existing configuration.
+2. Copy the two files from `target-overlays/hook/.github/hooks/` to the same paths in the Target project. Both are **ADD**. If `.github/hooks/audit.json` from Module 2 exists, keep it; these are separate configuration files. Do not replace or merge into the Module 2 diagnostic Hook.
+3. Select **Copilot** as the session target in VS Code, and confirm command Hooks are available for that session and execution host. The supplied configuration uses the current Copilot command-hook contract; it does not target the deprecated Local harness, Claude, or Codex session targets. On Windows, if `python3` is not available to the VS Code process, change only the command to `py -3 .github/hooks/run_changed_tests.py` (or the trainer-confirmed launcher).
+4. Inspect both files before enabling the Hook. Trace how it finds changed Python files under `app/` and `tests/`, selects the Target project's `.venv` Python where available, bounds execution and feedback, and handles `stop_hook_active`. Confirm no prompt, tool arguments, environment variables, or full test log is emitted.
+5. While the regression test still fails, start a fresh Copilot Agent session and ask it to explain the current implementation and regression test without editing files. At turn stop, the Hook should run pytest and return a concise failure reason. Inspect that reason and compare it with the earlier manual Lab B failure.
+6. Use the Lab D prompt in a new session for the implementation and verification step. If the test-feedback Hook returns a failure reason, ask Copilot to diagnose and fix the relevant failure. Once pytest passes, the Hook returns no decision and the turn can finish. If a second stop occurs while tests still fail or cannot run, the Hook allows the turn to finish after emitting a bounded diagnostic to stderr; inspect the result and run pytest yourself.
+7. Compare the Hook's short failure reason and the actual command `python -m pytest -q` output. The latter is the full diagnostic evidence; the Hook summary is only a prompt to investigate. Do not damage or overwrite Target files to manufacture a failure.
+
+The Hook has one forced continuation: if it receives another stop event marked `stop_hook_active`, it reports the still-failing or unverified condition to stderr and allows the turn to finish. It does not label that outcome as passing. A missing Hook, unavailable pytest, malformed input, timeout, or other execution problem is not evidence of a green suite; run pytest yourself and inspect its exit status. This local feedback aid does not replace human review or Module 10 CI.
+
 ## Completion criteria
 
 - The baseline tests pass before the Skill-guided red test is added.
@@ -86,6 +100,7 @@ If the MCP server is unavailable, use the trainer's fallback: read the issue tex
 - You reviewed a focused application fix rather than accepting it solely because the test became green.
 - The full suite passes after the fix, and you manually checked representative valid and invalid requests.
 - You can state what the suite does not cover. Passing tests are evidence about the checked cases, not proof that the application is defect-free.
+- (Optional) You inspected and enabled the Module 3 test-feedback Hook for implementation/verification, compared its bounded failure feedback with manual pytest output, and can explain its retry limit and manual fallback.
 
 ## Test environment notes
 

@@ -9,8 +9,8 @@ The course follows one small Python FastAPI Task API through a sequence of incre
 | Module | What participants do |
 |---|---|
 | [1. Copilot and project context](modules/01/participant-guide.md) | Explore a deliberately small Task API, compare work with and without repository context, then add `.github/copilot-instructions.md` to the separate Target project. |
-| [2. Skills, Hooks, and MCP](modules/02/README.md) | Add a reusable API review Skill, explore bounded tool-use Hooks, and connect a read-only GitHub MCP server to retrieve issue context. |
-| [3. Testing and feedback](modules/03/README.md) | Set up pytest, inspect a failing validation case, use a regression test to diagnose and fix whitespace-only task titles, and verify the result. |
+| [2. Skills, Hooks, and MCP](modules/02/README.md) | Add a reusable API review Skill, use a short Hook diagnostic to observe tool names, and connect a read-only GitHub MCP server to retrieve issue context. |
+| [3. Testing and feedback](modules/03/README.md) | Set up pytest, inspect a failing validation case, use a regression test to diagnose and fix whitespace-only task titles, and optionally add a separate `agentStop` Hook for concise pytest feedback during implementation and verification. |
 | [4. Requirements](modules/04/README.md) | Read the request, current code/tests, and Miro flow; clarify evidence and produce traceable draft requirements. |
 | [5. Lightweight Spec-Driven Development](modules/05/README.md) | Turn reviewed requirements into a spec and dependency-ordered stories/tasks linked to acceptance criteria and tests. |
 | [6. Incremental implementation](modules/06/README.md) | Implement the first story in test-backed steps, review each diff, and hand off verified status. |

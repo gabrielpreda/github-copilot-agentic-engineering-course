@@ -18,7 +18,7 @@ By the end of this lab, you can:
 
 - Continue with your Module 1 Target project and keep your Module 2 and 3 additions and local changes.
 - Use the GitHub MCP server already configured in Module 2. Do not add another GitHub server.
-- Keep the Module 2 tool-observation Hook and the Module 3 test-feedback Skill available.
+- Keep the Module 2 tool-observation Hook and the Module 3 test-feedback Skill available. If you completed optional Module 3 Lab D, its `agentStop` test-feedback Hook may also be present; it checks changed application/test Python files, while this module's optional session-start Hook has a separate continuity purpose.
 - Copy the worksheet template and the new Skill as described below. Each is **ADD**; retain any files already at those paths and merge by hand if a conflict exists.
 - Do not open the Training materials project as the application workspace.
 - Start from a clean Git checkpoint or save a copy so the worksheet and customizations are easy to inspect.

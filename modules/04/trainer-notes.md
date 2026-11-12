@@ -64,6 +64,7 @@ No criterion should require sorting, filtering, persistent storage, authenticati
 - **GitHub MCP:** discover and read related Issues; it supplies remote repository context. The existing configuration remains the one from Module 2.
 - **Optional Miro MCP:** inspect visual product/design evidence. It adds a different source and representation, but board content still needs provenance and approval checks. Do not duplicate a Miro connection if one is already provided by a plugin.
 - **Module 2 Hook:** observe tool names before/after calls; it makes the investigation visible.
+- **Optional Module 3 Hook:** checks changed Python files and supplies bounded pytest failure feedback at agent stop during implementation; it is distinct from both the Module 2 diagnostic and this module's session-start reminder.
 - **Module 4 Hook:** on session start, add a small contextual reminder to read the worksheet and respect its status/open questions. It cannot verify or enforce the content.
 - **Requirements Skill:** guides a repeatable reasoning workflow; it is not an external tool and does not fetch evidence by itself.
 
