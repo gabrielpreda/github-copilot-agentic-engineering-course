@@ -1,6 +1,6 @@
 # Module 3 — Prompt cards
 
-## Lab B — Ask Copilot to add a regression test
+## Lab A — Ask Copilot to add a regression test
 
 > Use the GitHub MCP server's read-only `issue_read` tool to retrieve issue #<ISSUE_NUMBER> from <OWNER>/<REPOSITORY>. Summarize its acceptance criteria and cite the issue number. Then use the `test-feedback` Skill to add one pytest regression test in the existing `tests/` directory for the requested behavior. If an equivalent test already exists, review it instead of creating a duplicate. Do not change application code, other tests, project dependencies, or documentation. Do not run tests yet. Show me the test diff and explain why it should fail against the current implementation.
 
