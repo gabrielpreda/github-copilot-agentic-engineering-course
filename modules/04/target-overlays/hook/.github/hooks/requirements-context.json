@@ -4,7 +4,7 @@
     "sessionStart": [
       {
         "type": "command",
-        "command": "python3 .github/hooks/load_requirements_context.py",
+        "command": "uv run --no-sync --project . python .github/hooks/load_requirements_context.py",
         "timeoutSec": 5
       }
     ]

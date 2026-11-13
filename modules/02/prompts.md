@@ -12,10 +12,9 @@ Use the same prompt before and after adding the Hook:
 
 > Read the Target project's README and summarize the API endpoints it documents. Do not change files and do not run commands.
 
-The Hook commands in the supplied `audit.json` use `python3` and pass a `before` or `after` label so the diagnostic is easy to read. These labels are command arguments; the Hook event itself still arrives as JSON on standard input.
+The Hook commands in the supplied `audit.json` use `uv run --no-sync --project . python` and pass a `before` or `after` label so the diagnostic is easy to read. The `--no-sync` option uses the Target project's existing uv environment without changing its installed packages. These labels are command arguments; the Hook event itself still arrives as JSON on standard input.
 
-- On Windows, if `python3` is not available in the VS Code process environment, edit both `command` values to use `py -3 .github/hooks/audit_tool_use.py before` and `py -3 .github/hooks/audit_tool_use.py after` (or the Python launcher confirmed by your trainer).
-- On macOS or Linux, keep `python3 .github/hooks/audit_tool_use.py before` for `preToolUse` and `python3 .github/hooks/audit_tool_use.py after` for `postToolUse`.
+- Confirm `uv` is available on the VS Code process `PATH`. If it is not, use the Target project's interpreter directly, such as `.venv/bin/python` on macOS/Linux or `.venv\\Scripts\\python.exe` on Windows, followed by the script path and `before`/`after` argument. An absolute path to `uv` is also valid. Keep the event JSON on standard input; do not add it to the command line.
 
 Keep the `before` label with `preToolUse` and the `after` label with `postToolUse`. The script receives the event data as JSON on standard input; do not add prompt text, tool arguments, or secrets to the command.
 
