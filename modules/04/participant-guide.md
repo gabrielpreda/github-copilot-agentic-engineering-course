@@ -64,7 +64,7 @@ Miro MCP can expose actions as well as reads. For this exercise, do not invoke c
 
 1. Check for existing session-start Hooks and review the current Copilot hook format for your session target. Hook formats vary across runtimes and can change.
 2. Copy `target-overlays/hook/.github/hooks/requirements-context.json` and `load_requirements_context.py` into the matching paths in the Target project. Both are **ADD**; keep `.github/hooks/audit.json` and its script from Module 2.
-3. If the Target project already has a hook configuration or uses a different Python command, merge the `sessionStart` entry and adapt the command with the trainer. Do not replace another hook file.
+3. The supplied command uses `uv run --no-sync --project . python ...` to use the Target project's existing uv environment without syncing dependencies. Confirm `uv` is available to the VS Code process; otherwise adapt the command to an absolute uv path or the Target project's `.venv` Python. If the Target project already has a hook configuration, merge the `sessionStart` entry with the trainer. Do not replace another hook file.
 4. Start a new disposable Copilot session. Confirm that the Hook adds only a reminder naming the worksheet and its status. Check its output; it should not include the worksheet's content.
 5. Change nothing in the worksheet during this check. Verify that the Hook does not alter files or block tool calls.
 

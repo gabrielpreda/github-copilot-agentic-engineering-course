@@ -4,7 +4,7 @@
     "agentStop": [
       {
         "type": "command",
-        "command": "python3 .github/hooks/run_changed_tests.py",
+        "command": "uv run --no-sync --project . python .github/hooks/run_changed_tests.py",
         "timeoutSec": 110
       }
     ]

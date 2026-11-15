@@ -21,6 +21,7 @@ By the end of this lab, you can:
 - Confirm GitHub Actions is enabled for the training repository and the workflow can run on the chosen branch. If Actions is unavailable, use a trainer demo and record that CI was not run for your repository.
 - Check whether `.github/workflows/ci.yml` or `scripts/ci_smoke.py` already exists. **ADD** files only when absent; otherwise **MERGE** behavior and preserve current workflow triggers, jobs, permissions, and conventions.
 - Copy `target-overlays/ci/.github/workflows/ci.yml` to `.github/workflows/ci.yml` (**ADD**, or merge into existing CI). Copy `target-overlays/ci/scripts/ci_smoke.py` to `scripts/ci_smoke.py` (**ADD**). These run the local project's own checks and don't deploy or access secrets.
+- For the optional Cloud Run path, copy `target-overlays/Dockerfile` to the Target project's root as `Dockerfile` (**ADD**). Keep it at the root so `gcloud run deploy --source .` detects and builds it; do not copy it into a `runtime/` directory.
 - Do not add cloud credentials to repository files or workflow YAML. Cloud deployment is optional and requires trainer authorization and a prepared non-production target.
 
 ## Lab A — Install and inspect the CI workflow

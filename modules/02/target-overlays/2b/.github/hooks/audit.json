@@ -4,14 +4,14 @@
     "preToolUse": [
       {
         "type": "command",
-        "command": "python3 .github/hooks/audit_tool_use.py before",
+        "command": "uv run --no-sync --project . python .github/hooks/audit_tool_use.py before",
         "timeoutSec": 10
       }
     ],
     "postToolUse": [
       {
         "type": "command",
-        "command": "python3 .github/hooks/audit_tool_use.py after",
+        "command": "uv run --no-sync --project . python .github/hooks/audit_tool_use.py after",
         "timeoutSec": 10
       }
     ]

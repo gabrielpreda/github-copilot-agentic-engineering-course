@@ -23,6 +23,7 @@ By the end of this lab, you can:
 - Copy `.github/skills/incremental-implementation/SKILL.md` from `target-overlays/skill/` to the same path in the Target project (**ADD**). Keep the existing Skills.
 - If absent, copy `target-overlays/handoff/docs/handoffs/task-priority.md` to `docs/handoffs/task-priority.md` (**ADD**). If it exists, preserve and update it rather than replacing it.
 - Optionally copy `target-overlays/hook/.github/hooks/implementation-context.json` and `load_implementation_context.py` into the corresponding Target project paths (**ADD**). Keep Module 2 and Module 4 Hook files. Check hook format and runtime compatibility first.
+- The supplied session-start Hook uses `uv run --no-sync --project . python ...` to run from the existing Target-project uv environment without syncing dependencies. Confirm `uv` is available to the VS Code process; otherwise use an absolute uv path or the Target project's `.venv` Python.
 - Do not open the Training materials project as the application workspace.
 
 ## Lab A — Select and sequence the work

@@ -13,7 +13,7 @@
 
 1. Use a Target project with the Module 4 requirements worksheet and the Module 1 Task API. Preserve participant changes.
 2. Review the Module 4 trainer answer card. Use the clarified priority behavior as the basis for the initial spec only if the requirements worksheet records those answers and their approval status.
-3. Prepare one scope change for the exercise. Suggested change: “For this release, tasks with priority `high` must be returned before other tasks by the existing list endpoint.” State clearly that it is a proposal unless the product owner approves it.
+3. Prepare one scope change for the exercise. Suggested trainer prompt: “For this release, the existing task-list endpoint should return tasks with priority `high` before tasks with other priorities. Keep the response shape and existing filters unchanged.” Present it as a proposal unless the product owner has approved it. This adds an observable ordering behavior to the priority feature while keeping the exercise focused on updating requirements, spec, tasks, and planned verification rather than implementation.
 4. Have learners keep the Module 2 GitHub MCP connection and prior Hooks/Skills available. GitHub MCP may be used to retrieve the approved Issue context; no new remote server or external write is required.
 5. Review the current Copilot Skill support and command syntax for the cohort's session target. Provide a manual prompt fallback if a Skill does not activate.
 
@@ -51,7 +51,7 @@ A reasonable task breakdown might be:
 
 Accept other sensible decompositions. Tests may be in the same task as a focused behavior change if the result remains verifiable. Do not prescribe Pydantic model details in the spec.
 
-For the proposed high-priority ordering scope change, learners should add a criterion only after approval, identify the list endpoint behavior it changes, add a planned ordering test, and update the relevant task(s). Existing unaffected default/value-validation criteria should retain their IDs.
+For the proposed high-priority ordering scope change, learners should identify the list endpoint behavior it changes and add a pending impact record without changing approved requirements. Once approved, they should add or revise the relevant criterion, add a planned ordering test, and update the affected task(s). Existing unaffected default/value-validation criteria should retain their IDs. The response shape and existing filters remain outside this change.
 
 ## Skill, Hook, and MCP connections
 

@@ -8,7 +8,7 @@ Use this path only when the trainer has prepared a non-production Google Cloud p
 - The target Google Cloud project, region, service name, access mode, runtime identity, and rollback method are confirmed.
 - The trainer confirms who may deploy and that the identity has only the required permissions.
 - The Cloud Run service's current IAM/access policy is inspected. Do not make a public service private or a private service public as an incidental deployment change.
-- The optional Dockerfile overlay has been added to the Target project as **ADD** at `Dockerfile`, and the resulting container starts with the `PORT` environment variable.
+- The optional `target-overlays/Dockerfile` has been added to the Target project root as **ADD** at `Dockerfile` (not under a `runtime/` subfolder), and the resulting container starts with the `PORT` environment variable. Confirm the deploy log says it is building from the Dockerfile rather than using Buildpacks.
 
 ## Deploy from a local authorized environment
 
