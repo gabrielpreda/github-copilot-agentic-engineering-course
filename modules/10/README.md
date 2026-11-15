@@ -9,7 +9,7 @@ Build a repeatable CI pipeline for the pushed story branches from Module 9. The 
 - `trainer-notes.md` — setup, timing, seeded failure, and deployment facilitation.
 - `target-overlays/ci/.github/workflows/ci.yml` — GitHub Actions workflow to **ADD** at `.github/workflows/ci.yml` or **MERGE** into the existing CI workflow.
 - `target-overlays/ci/scripts/ci_smoke.py` — live API smoke check to **ADD** at `scripts/ci_smoke.py`.
-- `target-overlays/runtime/Dockerfile` — optional container definition to **ADD** at `Dockerfile` when using the Cloud Run path.
+- `target-overlays/Dockerfile` — optional Dockerfile to **ADD** at the Target project's root as `Dockerfile` when using the Cloud Run path. Its overlay path matches its destination; do not place it in a `runtime/` subfolder in the Target project.
 - `cloud-run-guide.md` — optional, trainer-approved deployment and post-deployment verification path.
 
 ## Scope
