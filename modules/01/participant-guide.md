@@ -32,6 +32,23 @@ The starter is a tiny in-memory task API:
 - `GET /tasks` returns all tasks.
 - `POST /tasks` creates a task with a title and a `completed` flag.
 
+### Examples of calling the service
+
+
+```bash
+curl "http://localhost:8000/healthz"
+```
+
+```bash
+curl "http://localhost:8000/tasks"
+```
+
+```bash
+curl -X POST http://localhost:8000/tasks \                            
+  -H "Content-Type: application/json" \
+  -d '{"title": "Develop lectures materials and tests", "completed": false}'
+```
+
 There is no database, UI, authentication, test suite, Skill, Hook, MCP configuration, or `.github/copilot-instructions.md` in the starting target.
 
 ## Lab A — First Copilot change, without repository instructions
